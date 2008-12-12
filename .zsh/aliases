@@ -1,0 +1,28 @@
+# Aliases, how I love thee
+alias ls="ls --color=always"
+alias halt='sudo /sbin/halt'
+alias reboot='sudo /sbin/reboot'
+alias xinit="xinit -- -nolisten tcp"
+alias ll="ls -lh"
+alias irc="dtach -A ~/.irc weechat-curses"
+alias vimonad="vim ~/.xmonad/xmonad.hs"
+alias backup="tar --one-file-system --exclude=\"/home/meqif/stuff\" --exclude=\"/home/meqif/pkg\" --exclude=\"/home/meqif/.VirtualBox\" --exclude=\"/home/meqif/.wallpapers\" --exclude=\"/home/meqif/.thumbnails\" --exclude=\"/home/meqif/.Mail\" --exclude=\"/home/meqif/.volume.img\" --exclude=\"/home/meqif/.offlineimap/\" --exclude=\"/home/meqif/.aMule\" -jcvf /home/meqif/stuff/home-meqif-`date +%Y%m%d`.tar.bz2 /home/meqif"
+alias pm-suspend="sudo pm-suspend"
+alias susp="sudo pm-suspend"
+alias gzcat="zcat"
+alias gens="dchroot -d gens"
+alias zsnes="dchroot -d zsnes"
+#alias opera="dchroot -d opera"
+alias opera="schroot -p opera -notrayicon"
+alias fanspeed="sudo ~/src/tools/fanspeed"
+alias grep="ack"
+alias mini="ssh 192.168.1.5"
+alias sb="ssh 192.168.1.10"
+alias nitro="nitrogen --sort=alpha ~/.wallpapers"
+alias unibaka="unison -silent scarybox"
+alias valgrindfull="valgrind --leak-check=full --show-reachable=yes"
+alias radio_oxigenio="mplayer mms://stream.radio.com.pt/ROLI-ENC-124"
+alias radio_radar="mplayer mms://stream.radio.com.pt/ROLI-ENC-201"
+alias radio_groovesalad="mplayer http://somafm.com/groovesalad.pls"
+
+alias pacman=pacman-color

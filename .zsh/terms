@@ -1,0 +1,45 @@
+# Key bindings, useful.
+bindkey "\e[3~" delete-char
+bindkey "\e[2~" yank        #insert
+bindkey "\e[7~" beginning-of-line
+bindkey "\e[8~" end-of-line
+bindkey "\e[5~" history-search-backward
+bindkey "\e[6~" history-search-forward 
+
+# Set the titlebar for the window, and also the window title in screen :)
+#
+# I don't want to be cocky, but this is all my own stuff and I'm frikking
+# proud of it.
+
+# This function sets the window tile to user@host:/workingdir before each
+# prompt. If you're using screen, it sets the window title (works
+# wonderfully for hardstatus lines :)
+precmd () {
+  [[ -t 1 ]] || return
+  case $TERM in
+    *xterm*|*rxvt*|(dt|k|E|a)term) print -Pn "\e]2;%n@%m:%~\a"
+    ;;
+    #screen*) print -Pn "\e\"%n@%m:%~\e\134"
+  esac
+}
+
+# This sets the window title to the last run command.
+[[ -t 1 ]] || return
+case $TERM in
+  *xterm*|*rxvt*|(dt|k|E|a)term)
+    preexec () {
+      print -Pn "\e]2;$1\a"
+    }
+  ;;
+esac
+
+# Setting HOME and END keys 
+case $TERM in (xterm*|aterm|rxvt)
+	bindkey '\e[H' beginning-of-line
+	bindkey '\e[F' end-of-line
+  ;;
+  screen*)
+  bindkey "^[[1~" beginning-of-line
+  bindkey "^[[4~" end-of-line
+  ;;
+esac

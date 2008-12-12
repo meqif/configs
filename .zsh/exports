@@ -1,0 +1,30 @@
+# Exports
+export HOSTTYPE="$(uname -m)"
+export COLORTERM=yes
+export LINKS_XTERM=screen
+export MAILDIR=$HOME/.Mail/
+export MAIL=$MAILDIR
+export MAILCHECK=0
+export CC=gcc
+export MANPAGER="most"
+export PAGER=less
+export EDITOR=vim
+export BROWSER="firefox"
+
+# Add my stuff to $PATH
+export PATH=$PATH:"$HOME/src/bin/":"$HOME/src/git-wt/bin/"
+
+# Fixes Savage mouse problems.
+export SDL_VIDEO_X11_DGAMOUSE=0
+
+# Fixes java problems in dwm
+#export AWT_TOOLKIT=MToolkit
+
+# Fix sound in SDL apps
+export SDL_AUDIODRIVER="dma"
+
+# ack color
+export ACK_COLOR_MATCH="red"
+
+# Fix OpenOffice.org widgets
+export OOO_FORCE_DESKTOP=gnome

@@ -1,0 +1,76 @@
+! .Xdefaults
+
+!Xcursor.theme: Jimmac
+
+! colors
+*color0:                #222222
+*color8:                #222222
+*color1:                #803232
+*color9:                #982b2b
+*color2:                #5b762f
+*color10:               #89b83f
+*color3:                #aa9943
+*color11:               #efef60
+*color4:                #324c80
+*color12:               #2b4f98
+*color5:                #706c9a
+*color13:               #826ab1
+*color6:                #92b19e
+*color14:               #a1cdcd
+*color7:                #ffffff
+*color15:               #dedede
+
+! Urxvt Settings
+urxvt*scrollTtyOutput:  false
+urxvt*scrollTtyKeypress:false
+urxvt*loginShell:       true
+!urxvt*font:             xft:profont:pixelsize=11:antialias=true:hinting=true
+!urxvt*boldFont:         xft:profont:pixelsize=11:antialias=true:hinting=true
+!urxvt*font:             xft:Bitstream Vera Sans Mono:pixelsize=13
+urxvt.font:             -*-dina-medium-r-normal-*-13-*-*-*-*-*-*
+urxvt.boldFont:         -*-dina-medium-r-normal-*-13-*-*-*-*-*-*
+!urxvt.font:             -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
+!urxvt.boldFont:         -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
+urxvt.italicFont:       -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
+urxvt.boldItalicFont:   -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
+urxvt*scrollBar:        false
+urxvt*foreground:       #cccccc
+urxvt*background:       #191911
+urxvt*saveLines:        10000
+urxvt*tintColor:        #ffffff
+urxvt*geometry:         84x26
+urxvt*depth:            32
+urxvt*foreground:       grey80
+urxvt*background:       rgba:0000/0000/0000/dddd
+!urxvt*background:       #0d0d0d
+urxvt*background: [95]#0d0d0d
+urxvt*perl-lib:         /usr/lib/urxvt/perl/
+urxvt*perl-ext-common:  default,matcher,searchable-scrollback
+urxvt*urlLauncher:      /usr/bin/firefox
+urxvt*matcher.button:   1
+
+! Xterm Settings
+xterm*faceName:         Bitstream Vera Sans Mono
+xterm*faceSize:         10
+xterm*eightBitInput:    false
+XTerm*metaSendsEscape:  true
+xterm*boldMode:         off
+xterm*scrollBar:        false
+xterm*saveLines:        1000
+xterm*Foreground:       #cccccc
+xterm*Background:       #0d0d0d
+xterm*Border:           #303430
+xterm*TitleBar:         on
+xterm*TextUnderIcon:    on
+xterm*AllowIconInput:   on
+xterm*AutoRaise:        on
+xterm*termtype:         vt100
+xterm*ttyModes:         intr ^c erase ^h susp ^@ dsusp ^@ kill ^u eof ^d
+xterm*jumpScroll:       true
+xterm*multiScroll:      true
+xterm*backarrowKey:   false
+XTerm*cutNewline:       False
+XTerm*loginShell:       true
+
+
+Xft.dpi:                96

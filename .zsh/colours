@@ -1,0 +1,18 @@
+# Colours
+# 
+# I haven't actually used these yet, apart from for reference. You can use
+# these when prompting. Capitalised stuff is bold.
+
+export red=$'%{\e[0;31m%}'
+export RED=$'%{\e[1;31m%}'
+export green=$'%{\e[0;32m%}'
+export GREEN=$'%{\e[1;32m%}'
+export blue=$'%{\e[0;34m%}'
+export BLUE=$'%{\e[1;34m%}'
+export purple=$'%{\e[0;35m%}'
+export PURPLE=$'%{\e[1;35m}'
+export cyan=$'%{\e[0;36m%}'
+export CYAN=$'%{\e[1;36m}'
+export WHITE=$'%{\e[1;37m}'
+export white=$'%{\e[0;37m}'
+export NC=$'%{\e[0m%}' 

@@ -1,0 +1,34 @@
+# Load the super duper completion stuff
+autoload -U compinit
+compinit
+
+# Prompt
+autoload -U promptinit
+promptinit
+
+compctl -g '*(-/)' + -g '.*(-/)' -v cd pushd rmdir
+compctl -k hosts -x 'p[2,-1]' -l '' -- rsh ssh
+
+# completion for "man" by Gossamer <gossamer@tertius.net.au> 980827
+# This is damn funky. I'm going to do something similar for pinfo,
+# hopefully.
+compctl -f -x 'S[1][2][3][4][5][6][7][8][9]' -k '(1 2 3 4 5 6 7 8 9)' \
+  - 'R[[1-9nlo]|[1-9](|[a-z]),^*]' -K 'match-man' \
+  - 's[-M],c[-1,-M]' -g '*(-/)' \
+  - 's[-P],c[-1,-P]' -c \
+  - 's[-S],s[-1,-S]' -k '( )' \
+  - 's[-]' -k '(a d f h k t M P)' \
+  - 'p[1,-1]' -c + -K 'match-man' \
+  -- man
+
+
+# Completition
+compctl -b bindkey
+compctl -v export
+compctl -o setopt
+compctl -v unset
+compctl -o unsetopt
+compctl -v vared
+compctl -c which
+compctl -c sudo
+compctl -c git

@@ -183,6 +183,8 @@ autocmd BufReadPre *.nasm set filetype=asm
 " SVG
 autocmd BufReadPre *.svg set filetype=svg
 
+" Ragel
+au BufRead,BufNewFile *.rl set filetype=ragel
 
 """""""""""""""
 " Keymappings "

@@ -108,10 +108,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((mod4Mask,               xK_l    ), spawn horario_lena)
 
     -- multimedia keys / MPD control
-    , ((0,                     xK_F31   ), spawn "mpc toggle")
-    , ((0,                     xK_F32   ), spawn "mpc stop > /dev/null")
-    , ((0,                     xK_F33   ), spawn "mpc prev > /dev/null")
-    , ((0,                     xK_F34   ), spawn "mpc next > /dev/null")
+    , ((0,                 0x1008ff14   ), spawn "mpc toggle")
+    , ((0,                 0x1008ff15   ), spawn "mpc stop > /dev/null")
+    , ((0,                 0x1008ff16   ), spawn "mpc prev > /dev/null")
+    , ((0,                 0x1008ff17   ), spawn "mpc next > /dev/null")
 
     -- close focused window
     , ((modMask .|. shiftMask, xK_c     ), kill)

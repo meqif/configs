@@ -4,7 +4,8 @@ bindkey "\e[2~" yank        #insert
 bindkey "\e[7~" beginning-of-line
 bindkey "\e[8~" end-of-line
 bindkey "\e[5~" history-search-backward
-bindkey "\e[6~" history-search-forward 
+bindkey "\e[6~" history-search-forward
+bindkey '^R'    history-incremental-search-backward
 
 # Set the titlebar for the window, and also the window title in screen :)
 #
@@ -33,7 +34,7 @@ case $TERM in
   ;;
 esac
 
-# Setting HOME and END keys 
+# Setting HOME and END keys
 case $TERM in (xterm*|aterm|rxvt)
 	bindkey '\e[H' beginning-of-line
 	bindkey '\e[F' end-of-line

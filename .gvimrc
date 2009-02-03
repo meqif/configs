@@ -1,1 +1,1 @@
-colorscheme railscasts
+colorscheme desert

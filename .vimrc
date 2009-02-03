@@ -19,7 +19,7 @@ map <F12> :browse confirm e<CR>
 color darktango
 "color candycode
 "set guifont=MonteCarlo\ 9
-set guifont="Bitstream Vera Sans Mono 10"
+set guifont=Profont\ 10
 
 """""""""""""
 " Functions "

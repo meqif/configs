@@ -20,9 +20,6 @@ export SDL_VIDEO_X11_DGAMOUSE=0
 # Fixes java problems in dwm
 #export AWT_TOOLKIT=MToolkit
 
-# Fix sound in SDL apps
-export SDL_AUDIODRIVER="dma"
-
 # ack color
 export ACK_COLOR_MATCH="red"
 

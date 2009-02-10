@@ -21,6 +21,9 @@ import XMonad.Layout.LayoutHints
 import XMonad.Layout.NoBorders
 import XMonad.Layout.SimpleFloat
 import XMonad.Layout.PerWorkspace
+import XMonad.Layout.Grid
+import XMonad.Layout.CenteredMaster
+import XMonad.Layout.ThreeColumnsMiddle
 -- Misc
 import XMonad.Operations
 import XMonad.Util.Run (spawnPipe)
@@ -84,7 +87,8 @@ getWorkspaceId name = case lookup name (zip myWorkspaceNames myWorkspaces) of
 
 -- Border colors for unfocused and focused windows, respectively.
 --
-myMainColor          = "#ff9900"
+--myMainColor          = "#ff9900"
+myMainColor          = "#848484"
 myNormalBorderColor  = "#444444"
 myFocusedBorderColor = myMainColor
 
@@ -167,8 +171,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
 
     -- Restart xmonad
-    , ((modMask .|. controlMask , xK_r ),
-        broadcastMessage ReleaseResources >> restart "xmonad" True)
+    , ((modMask              , xK_q     ), spawn "xmonad --restart")
     ]
     ++
 
@@ -208,6 +211,7 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 myLayout = onWorkspace (getWorkspaceId "im") imL
          $ onWorkspace (getWorkspaceId "code") codeL
          $ onWorkspace (getWorkspaceId "doc") docL
+         $ onWorkspace (getWorkspaceId "8") gimpL
          $ restL
          where
              tiled   = Tall nmaster delta ratio
@@ -217,13 +221,16 @@ myLayout = onWorkspace (getWorkspaceId "im") imL
 
              mtile   = Mirror (Tall 1 (3/100) (62/100))
 
+             centerd = centerMaster Grid
+
              imL     = avoidStruts $ simpleFloat
              codeL   = avoidStruts $ smartBorders $ layoutHints
                                    $ (Tall nmaster delta (56/100) ||| mtile ||| Full)
              docL    = avoidStruts $ smartBorders $ layoutHints
                                    $ (Full ||| tiled ||| mtile)
              restL   = avoidStruts $ smartBorders $ layoutHints
-                                   $ (tiled ||| mtile ||| Full ||| simpleFloat)
+                                   $ (tiled ||| mtile ||| Full ||| centerd ||| simpleFloat)
+             gimpL   = avoidStruts $ ThreeColMid 1 (3/100) (2/3)
 
 --------------------------------------------------------------------------------
 -- Window rules:
@@ -242,7 +249,7 @@ myManageHook = composeAll . concat $
         doc  = [ "Kile" ]
         web  = [ "Gran Paradiso", "Firefox", "Opera" ]
         im   = [ "Pidgin", "gajim.py" ]
-        myFloats = ["MPlayer", "mplayer", "Gimp", "Sonata", "feh", "fbpanel",
+        myFloats = ["MPlayer", "mplayer", "Sonata", "feh", "fbpanel",
                     "Pidgin", "gajim.py", "gens", "Skype", "Nitrogen",
                     "Save a Bookmark", "emesene", "Eclipse SDK", ".", "Dia"]
         myOtherFloats = ["Gran Paradiso - Restore Previous Session", "Add-ons",

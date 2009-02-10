@@ -1,0 +1,63 @@
+#
+# ~/.xinitrc
+#
+
+FN="-*-profont-*-*-*-*-11-*-*-*-*-*-iso8859"
+BG="#222222"
+export XINERAMA_SCREENS=`~/src/xinerama`
+
+# Load custom keymaps
+xmodmap ~/.Xmodmap
+
+# Set mouse cursor
+xsetroot -cursor_name left_ptr &
+
+#
+#xscreensaver -no-splash &
+
+# Set wallpaper
+#$(cat ~/.fehbg)
+nitrogen --restore
+#xsetroot -solid '#85a6b1'
+
+# Transparency for the massive slowdown and pretties
+#(sleep 5 && xcompmgr&) &
+
+# NVIDIA fix
+nvidia-settings -a InitialPixmapPlacement=2
+
+# Start mpd
+nice -n -10 mpd &
+mpdscribble &
+
+# Launch statusbar
+if [[ $XINERAMA_SCREENS == "1" ]]; then
+    zsh ~/.xmonad/status.sh | dzen2 -ta r -fn $FN -h 16 -w 1440 -bg $BG -e '' &
+else
+    zsh ~/.xmonad/status.sh | dzen2 -xs 0 -ta r -fn $FN -h 16 -w 1680 -bg $BG -e '' &
+    zsh ~/.xmonad/status.sh | dzen2 -xs 1 -ta r -fn $FN -h 16 -w 1440 -bg $BG -e '' &
+fi
+
+# Start urxvt daemon
+urxvtd -q -f -o
+
+# Volume manager
+thunar --daemon &
+
+# Launch tray
+#stalonetray  -i 5 --max-height 5 --ignore-icon-resize 1 --geometry 1x1-0+0 -bg $BG --skip-taskbar &
+stalonetray  -t --skip-taskbar --geometry 124x24+1680+876 &
+
+gpomme &
+
+# Launch network manager
+nm-applet &
+#wicd-client &
+
+# Load ICC profiles
+xcalib ~/.icc_profiles/Color\ LCD-4272000.icc
+xcalib -s 1 ~/.icc_profiles/SyncMaster-B40CB71.icc
+
+# Launch WM
+exec ck-launch-session xmonad
+#dbus-launch --sh-syntax --exit-with-session xmonad

@@ -7,19 +7,7 @@
 " GUI options, and colorscheme selection "
 """"""""""""""""""""""""""""""""""""""""""
 
-"set guioptions-=T
-set guioptions-=t
-"set guioptions-=m
-set guioptions-=L
-set guioptions-=l
-set guioptions-=r
-set guioptions-=R
-map <F12> :browse confirm e<CR>
-"color taqua
 color darktango
-"color candycode
-"set guifont=MonteCarlo\ 9
-set guifont=Profont\ 10
 
 """""""""""""
 " Functions "

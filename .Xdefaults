@@ -41,7 +41,10 @@ urxvt*urlLauncher:      /usr/bin/firefox
 urxvt*matcher.button:   1
 
 ! Xterm Settings
-xterm*faceName:         Bitstream Vera Sans Mono
+xterm*font:             -*-dina-medium-r-normal-*-13-*-*-*-*-*-*
+xterm*boldFont:         -*-dina-medium-r-normal-*-13-*-*-*-*-*-*
+xterm*italicFont:       -*-dina-medium-r-normal-*-13-*-*-*-*-*-*
+xterm*boldItalicFont:   -*-dina-medium-r-normal-*-13-*-*-*-*-*-*
 xterm*faceSize:         10
 xterm*eightBitInput:    false
 XTerm*metaSendsEscape:  true

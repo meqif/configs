@@ -2,12 +2,12 @@ function todo()
 {
   TODO="$HOME/.TODO"
   case "$1" in
-    "")
-      cat $TODO;;
-    add)
-      echo "* $*[2,-1]" >> $TODO; cat $TODO;;
-    del)
-      awk "/\*/{if(++h==$*[2])next}1" $TODO > /tmp/TODO.tmp; mv /tmp/TODO.tmp $TODO;;
+    ""|ls|list)
+      cat $TODO|awk '{count++; print "["count"]" " " $0 }';;
+    add|a|+)
+      echo "$*[2,-1]" >> $TODO;;
+    del|delete|d)
+      awk '{ if(++h!='"$*[2]"') print $0}' $TODO > /tmp/TODO.tmp; mv /tmp/TODO.tmp $TODO;;
   esac
 }
 

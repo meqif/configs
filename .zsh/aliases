@@ -7,7 +7,7 @@ alias ll="ls -lh"
 alias irc="dtach -A ~/.irc weechat-curses"
 alias vimonad="vim ~/.xmonad/xmonad.hs"
 alias backup="tar --one-file-system --exclude=\"/home/meqif/stuff\" --exclude=\"/home/meqif/pkg\" --exclude=\"/home/meqif/.VirtualBox\" --exclude=\"/home/meqif/.wallpapers\" --exclude=\"/home/meqif/.thumbnails\" --exclude=\"/home/meqif/.Mail\" --exclude=\"/home/meqif/.volume.img\" --exclude=\"/home/meqif/.offlineimap/\" --exclude=\"/home/meqif/.aMule\" -jcvf /home/meqif/stuff/home-meqif-`date +%Y%m%d`.tar.bz2 /home/meqif"
-alias snap='tarsnap --humanize-numbers --one-file-system --exclude="/home/meqif/stuff" --exclude="/home/meqif/pkg" --exclude="/home/meqif/.VirtualBox" --exclude="/home/meqif/.wallpapers" --exclude="/home/meqif/.thumbnails" --exclude="/home/meqif/.gqview" --exclude="/home/meqif/.volume.img" --exclude="/home/meqif/.offlineimap" --exclude="/home/meqif/.aMule" --exclude="*.o" --exclude="*.sqlite" --exclude="*cache*" --exclude="*Cache*" --exclude="/home/meqif/.unison" -c -v -f backup-`date +%Y-%m-%d` /home/meqif'
+alias snap='tarsnap --humanize-numbers --one-file-system --exclude="/home/meqif/stuff" --exclude="/home/meqif/pkg" --exclude="/home/meqif/.VirtualBox" --exclude="/home/meqif/.wallpapers" --exclude="/home/meqif/.thumbnails" --exclude="/home/meqif/.gqview" --exclude="/home/meqif/.volume.img" --exclude="/home/meqif/.offlineimap" --exclude="/home/meqif/.aMule" --exclude="*.o" --exclude="*.sqlite" --exclude="*cache*" --exclude="*Cache*" --exclude="/home/meqif/.unison" --exclude="/home/meqif/tmp" -c -v -f backup-`date +%Y-%m-%d` /home/meqif'
 alias pm-suspend="sudo pm-suspend"
 alias susp="sudo pm-suspend"
 alias gzcat="zcat"

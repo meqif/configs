@@ -39,4 +39,8 @@ function hivad()
     mutt -s "$*" "$(cat ~/.hiveminder-email)" < /dev/null
 }
 
+function mkcd() {
+  [ -n "$1" ] && mkdir -p "$@" && cd "$1";
+}
+
 # vim: filetype=sh

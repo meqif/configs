@@ -43,4 +43,10 @@ function mkcd() {
   [ -n "$1" ] && mkdir -p "$@" && cd "$1";
 }
 
+# Force zsh completion to see new commands
+_force_rehash() {
+  (( CURRENT == 1 )) && rehash
+  return 1	# Because we didn't really complete anything
+}
+
 # vim: filetype=sh

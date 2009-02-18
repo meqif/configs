@@ -46,7 +46,11 @@ thunar --daemon &
 
 # Launch tray
 #stalonetray  -i 5 --max-height 5 --ignore-icon-resize 1 --geometry 1x1-0+0 -bg $BG --skip-taskbar &
-stalonetray  -t --skip-taskbar --geometry 124x24+1680+876 &
+if [[ $XINERAMA_SCREENS == "1" ]]; then
+    stalonetray -t --skip-taskbar &
+else
+    stalonetray  -t --skip-taskbar --geometry 124x24+1680+876 &
+fi
 
 gpomme &
 

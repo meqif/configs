@@ -24,10 +24,10 @@ Xft.dpi:                96
 urxvt*scrollTtyOutput:  false
 urxvt*scrollTtyKeypress:false
 urxvt*loginShell:       true
-urxvt.font:             -*-dina-medium-r-normal-*-13-*-*-*-*-*-*
-urxvt.boldFont:         -*-dina-medium-r-normal-*-13-*-*-*-*-*-*
-urxvt.italicFont:       -*-dina-medium-r-normal-*-13-*-*-*-*-*-*
-urxvt.boldItalicFont:   -*-dina-medium-r-normal-*-13-*-*-*-*-*-*
+urxvt.font:             -*-dina-medium-r-normal-*-13-*-*-*-*-*-*,xft:mikachan:size=10
+urxvt.boldFont:         -*-dina-medium-r-normal-*-13-*-*-*-*-*-*,xft:mikachan:size=10
+urxvt.italicFont:       -*-dina-medium-r-normal-*-13-*-*-*-*-*-*,xft:mikachan:size=10
+urxvt.boldItalicFont:   -*-dina-medium-r-normal-*-13-*-*-*-*-*-*,xft:mikachan:size=10
 urxvt*scrollBar:        false
 urxvt*foreground:       grey80
 urxvt*background:       [95]#0d0d0d

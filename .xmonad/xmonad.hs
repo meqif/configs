@@ -29,7 +29,7 @@ import XMonad.Operations
 import XMonad.Util.Run (spawnPipe)
 
 import System.Exit
-import System.IO.UTF8 (hPutStrLn)
+import System.IO (hPutStrLn)
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -281,7 +281,7 @@ myPP h = defaultPP
             _ -> x
         )
     , ppTitle   = dzenColor "white" "" . wrap "< " " >"
-    , ppOutput  = System.IO.UTF8.hPutStrLn h
+    , ppOutput  = hPutStrLn h
 }
 
 --------------------------------------------------------------------------------

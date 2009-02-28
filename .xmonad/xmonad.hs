@@ -193,7 +193,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 --------------------------------------------------------------------------------
 -- Mouse bindings: default actions bound to mouse events
 --
-myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
+myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList
 
     -- mod-button1, Set the window to floating mode and move by dragging
     [ ((modMask, button1), (\w -> focus w >> mouseMoveWindow w))
@@ -212,7 +212,7 @@ myLayout = onWorkspace (getWorkspaceId "im") imL
          $ onWorkspace (getWorkspaceId "code") codeL
          $ onWorkspace (getWorkspaceId "doc") docL
          $ onWorkspace (getWorkspaceId "8") gimpL
-         $ restL
+         restL
          where
              tiled   = Tall nmaster delta ratio
              nmaster = 1
@@ -223,13 +223,13 @@ myLayout = onWorkspace (getWorkspaceId "im") imL
 
              centerd = centerMaster Grid
 
-             imL     = avoidStruts $ simpleFloat
+             imL     = avoidStruts simpleFloat
              codeL   = avoidStruts $ smartBorders $ layoutHints
-                                   $ (Tall nmaster delta (56/100) ||| mtile ||| Full)
+                                   (Tall nmaster delta (56/100) ||| mtile ||| Full)
              docL    = avoidStruts $ smartBorders $ layoutHints
-                                   $ (Full ||| tiled ||| mtile)
+                                   (Full ||| tiled ||| mtile)
              restL   = avoidStruts $ smartBorders $ layoutHints
-                                   $ (tiled ||| mtile ||| Full ||| centerd ||| simpleFloat)
+                                   (tiled ||| mtile ||| Full ||| centerd ||| simpleFloat)
              gimpL   = avoidStruts $ ThreeColMid 1 (3/100) (2/3)
 
 --------------------------------------------------------------------------------

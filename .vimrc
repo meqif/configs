@@ -243,7 +243,7 @@ syntax on
 "Tab vs. space autodetection
 function Kees_settabs()
     if len(filter(getbufline(winbufnr(0), 1, "$"), 'v:val =~ "^\t"')) > len(filter(getbufline(winbufnr(0), 1, "$"), 'v:val =~ "^ "'))
-        set noet ts=8 sw=8
+        set noet ts=4 sw=4
     endif
 endfunction
 autocmd BufReadPost * call Kees_settabs()

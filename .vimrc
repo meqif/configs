@@ -7,7 +7,19 @@
 " GUI options, and colorscheme selection "
 """"""""""""""""""""""""""""""""""""""""""
 
-color darktango
+"color darktango
+
+if (&term =~ 'linux')
+    set t_Co=16
+    set termencoding=utf-8
+    set nocursorline
+    colorscheme darktango
+else
+    set t_Co=256
+    set mouse=a
+    colorscheme jellybeans
+    set termencoding=utf-8
+endif
 
 """""""""""""
 " Functions "

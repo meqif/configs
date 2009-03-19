@@ -1,0 +1,7 @@
+mail	mail.txt	/*mail*
+mail-configuration	mail.txt	/*mail-configuration*
+mail-installation	mail.txt	/*mail-installation*
+mail-terminology	mail.txt	/*mail-terminology*
+mail-usage	mail.txt	/*mail-usage*
+mail.txt	mail.txt	/*mail.txt*
+mail.vim	mail.txt	/*mail.vim*

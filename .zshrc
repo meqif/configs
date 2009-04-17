@@ -35,6 +35,8 @@ TMPPREFIX=/tmp
 . ~/.zsh/exports
 . ~/.zsh/terms
 
+. ~/.zsh/j.sh
+
 autoload -U zmv
 alias mmv='zmv -W'
 

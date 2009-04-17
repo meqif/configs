@@ -42,7 +42,7 @@ alias mmv='zmv -W'
 
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/vc/1 ]]; then
     xinit
-    logout
+    #logout
 fi
 
 #if [[ -n $DISPLAY ]]; then

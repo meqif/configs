@@ -15,6 +15,9 @@ xsetroot -cursor_name left_ptr &
 #
 #xscreensaver -no-splash &
 
+# Fix keyboard repeat rate
+xset r rate 200 25
+
 # Set wallpaper
 #$(cat ~/.fehbg)
 nitrogen --restore
@@ -55,8 +58,8 @@ fi
 gpomme &
 
 # Launch network manager
-nm-applet &
-#wicd-client &
+#nm-applet &
+wicd-client &
 
 # Load ICC profiles
 xcalib ~/.icc_profiles/Color\ LCD-4272000.icc

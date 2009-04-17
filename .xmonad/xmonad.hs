@@ -17,12 +17,15 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.UrgencyHook
 -- Layouts
 import XMonad.Layout
+import XMonad.Layout.CenteredMaster
+import XMonad.Layout.Circle
+import XMonad.Layout.Grid
+import XMonad.Layout.IM
 import XMonad.Layout.LayoutHints
 import XMonad.Layout.NoBorders
-import XMonad.Layout.SimpleFloat
 import XMonad.Layout.PerWorkspace
-import XMonad.Layout.Grid
-import XMonad.Layout.CenteredMaster
+import XMonad.Layout.Reflect
+import XMonad.Layout.SimplestFloat
 import XMonad.Layout.ThreeColumnsMiddle
 -- Misc
 import XMonad.Operations
@@ -211,7 +214,7 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList
 myLayout = onWorkspace (getWorkspaceId "im") imL
          $ onWorkspace (getWorkspaceId "code") codeL
          $ onWorkspace (getWorkspaceId "doc") docL
-         $ onWorkspace (getWorkspaceId "8") gimpL
+         $ onWorkspace (getWorkspaceId "8") gimp
          restL
          where
              tiled   = Tall nmaster delta ratio
@@ -223,14 +226,17 @@ myLayout = onWorkspace (getWorkspaceId "im") imL
 
              centerd = centerMaster Grid
 
-             imL     = avoidStruts simpleFloat
+             imL     = avoidStruts simplestFloat
              codeL   = avoidStruts $ smartBorders $ layoutHints
                                    (Tall nmaster delta (56/100) ||| mtile ||| Full)
              docL    = avoidStruts $ smartBorders $ layoutHints
                                    (Full ||| tiled ||| mtile)
-             restL   = avoidStruts $ smartBorders $ layoutHints
-                                   (tiled ||| mtile ||| Full ||| centerd ||| simpleFloat)
+             restL   = avoidStruts $ layoutHints
+                                   (tiled ||| mtile ||| Full ||| centerd ||| simplestFloat)
              gimpL   = avoidStruts $ ThreeColMid 1 (3/100) (2/3)
+             gimp    = avoidStruts $ withIM (0.11) (Role "gimp-toolbox") $
+                       reflectHoriz $
+                       withIM (0.15) (Role "gimp-dock") Full
 
 --------------------------------------------------------------------------------
 -- Window rules:
@@ -276,8 +282,8 @@ myPP h = defaultPP
             "Tall"               -> "^i(" ++ myIconDir ++ "tall2.xbm)"
             "Hinted Mirror Tall" -> "^i(" ++ myIconDir ++ "mtall2.xbm)"
             "Hinted Full"        -> "^i(" ++ myIconDir ++ "full.xbm)"
-            "Hinted Simple Float" -> "><>"
-            "Simple Float"        -> "><>"
+            "Hinted SimplestFloat" -> "><>"
+            "SimplestFloat"      -> "><>"
             _ -> x
         )
     , ppTitle   = dzenColor "white" "" . wrap "< " " >"

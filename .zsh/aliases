@@ -7,14 +7,12 @@ alias ll="ls -lh"
 alias irc="dtach -A ~/.irc weechat-curses"
 alias vimonad="vim ~/.xmonad/xmonad.hs"
 alias backup="tar --one-file-system --exclude=\"/home/meqif/stuff\" --exclude=\"/home/meqif/pkg\" --exclude=\"/home/meqif/.VirtualBox\" --exclude=\"/home/meqif/.wallpapers\" --exclude=\"/home/meqif/.thumbnails\" --exclude=\"/home/meqif/.Mail\" --exclude=\"/home/meqif/.volume.img\" --exclude=\"/home/meqif/.offlineimap/\" --exclude=\"/home/meqif/.aMule\" -jcvf /home/meqif/stuff/home-meqif-`date +%Y%m%d`.tar.bz2 /home/meqif"
-alias snap='tarsnap --humanize-numbers --one-file-system --exclude="/home/meqif/stuff" --exclude="/home/meqif/pkg" --exclude="/home/meqif/.VirtualBox" --exclude="/home/meqif/.wallpapers" --exclude="/home/meqif/.thumbnails" --exclude="/home/meqif/.gqview" --exclude="/home/meqif/.volume.img" --exclude="/home/meqif/.offlineimap" --exclude="/home/meqif/.aMule" --exclude="*.o" --exclude="*.sqlite" --exclude="*cache*" --exclude="*Cache*" --exclude="/home/meqif/.unison" --exclude="/home/meqif/tmp" -c -v -f backup-`date +%Y-%m-%d` /home/meqif'
+alias snap='tarsnap --humanize-numbers --one-file-system --exclude="/home/meqif/stuff" --exclude="/home/meqif/pkg" --exclude="/home/meqif/.VirtualBox" --exclude="/home/meqif/.wallpapers" --exclude="/home/meqif/.thumbnails" --exclude="/home/meqif/.gqview" --exclude="/home/meqif/.volume.img" --exclude="/home/meqif/.offlineimap" --exclude="/home/meqif/.aMule" --exclude="*.o" --exclude="*.sqlite" --exclude="*cache*" --exclude="*Cache*" --exclude="/home/meqif/.unison" --exclude="/home/meqif/tmp" --exclude="/home/meqif/.wine" -c -v -f backup-`date +%Y-%m-%d` /home/meqif'
 alias pm-suspend="sudo pm-suspend"
-alias susp="sudo pm-suspend"
+alias susp="sync; sync; sudo pm-suspend"
 alias gzcat="zcat"
 alias gens="dchroot -d gens"
 alias zsnes="dchroot -d zsnes"
-#alias opera="dchroot -d opera"
-alias opera="schroot -p opera -notrayicon"
 alias fanspeed="sudo ~/src/tools/fanspeed"
 alias grep="ack"
 alias mini="ssh mini"
@@ -27,3 +25,10 @@ alias radio_radar="mplayer mms://stream.radio.com.pt/ROLI-ENC-201"
 alias radio_groovesalad="mplayer http://somafm.com/groovesalad.pls"
 
 alias pacman=pacman-color
+alias burn="cdrecord -v dev=/dev/sr0 driveropts=burnfree -eject"
+alias y='sudo pacman-color'
+alias pp='sudo powerpill'
+
+alias newsbeuter="TERM=xterm newsbeuter"
+
+alias nogba='wine ~/tmp/no/NO\$GBA.EXE'

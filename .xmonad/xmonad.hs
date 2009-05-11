@@ -1,8 +1,8 @@
 --
 -- meqif's xmonad config file.
 --
--- Slightly modified default config file, with some stuff from Rob
--- Manea's config.
+-- Slightly modified default config file, with some stuff from Rob Manea's
+-- config.
 --
 
 -- XMonad Core
@@ -17,16 +17,11 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.UrgencyHook
 -- Layouts
 import XMonad.Layout
-import XMonad.Layout.CenteredMaster
-import XMonad.Layout.Circle
-import XMonad.Layout.Grid
 import XMonad.Layout.IM
 import XMonad.Layout.LayoutHints
-import XMonad.Layout.NoBorders
 import XMonad.Layout.PerWorkspace
 import XMonad.Layout.Reflect
 import XMonad.Layout.SimplestFloat
-import XMonad.Layout.ThreeColumnsMiddle
 -- Misc
 import XMonad.Operations
 import XMonad.Util.Run (spawnPipe)
@@ -224,16 +219,13 @@ myLayout = onWorkspace (getWorkspaceId "im") imL
 
              mtile   = Mirror (Tall 1 (3/100) (62/100))
 
-             centerd = centerMaster Grid
-
              imL     = avoidStruts simplestFloat
-             codeL   = avoidStruts $ smartBorders $ layoutHints
+             codeL   = avoidStruts $ layoutHints
                                    (Tall nmaster delta (56/100) ||| mtile ||| Full)
-             docL    = avoidStruts $ smartBorders $ layoutHints
+             docL    = avoidStruts $ layoutHints
                                    (Full ||| tiled ||| mtile)
              restL   = avoidStruts $ layoutHints
-                                   (tiled ||| mtile ||| Full ||| centerd ||| simplestFloat)
-             gimpL   = avoidStruts $ ThreeColMid 1 (3/100) (2/3)
+                                   (tiled ||| mtile ||| Full ||| simplestFloat)
              gimp    = avoidStruts $ withIM (0.11) (Role "gimp-toolbox") $
                        reflectHoriz $
                        withIM (0.15) (Role "gimp-dock") Full

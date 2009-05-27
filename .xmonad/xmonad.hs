@@ -32,6 +32,14 @@ import System.IO (hPutStrLn)
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
+import XMonad.Prompt (XPConfig(..))
+import XMonad.Prompt.Shell (shellPrompt)
+import XMonad.Prompt                                            (XPPosition(Top), XPConfig(..), defaultXPConfig)
+import XMonad.Prompt.Man                                        (manPrompt)
+import XMonad.Prompt.Window                                     (windowPromptGoto, windowPromptBring)
+import XMonad.Prompt.XMonad                                     (xmonadPrompt)
+
+
 --------------------------------------------------------------------------------
 -- Misc commands
 --
@@ -90,6 +98,22 @@ myMainColor          = "#848484"
 myNormalBorderColor  = "#444444"
 myFocusedBorderColor = myMainColor
 
+-- The prompt config {{{
+myPromptConfig :: XPConfig
+myPromptConfig = defaultXPConfig
+    { position          = Top
+    , historySize       = 0
+    , promptBorderWidth = 0
+    , font              = myFont
+    , height            = 16
+    , bgColor           = "#222222"
+    , fgColor           = "#cccccc"
+    , bgHLight          = "#555555"
+    , fgHLight          = "#ffffff"
+    , autoComplete      = Just 200
+    }
+-- }}}
+
 --------------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
 --
@@ -99,7 +123,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     [ ((modMask .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch dmenu
-    , ((modMask,               xK_p     ), spawn dmenu)
+    , ((modMask,               xK_p     ), shellPrompt myPromptConfig)
+--    , ((modMask,               xK_p     ), spawn dmenu)
 
     -- launch firefox
     , ((modMask .|. shiftMask, xK_w     ), spawn "firefox")

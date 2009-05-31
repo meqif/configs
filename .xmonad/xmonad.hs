@@ -44,8 +44,6 @@ import XMonad.Prompt.XMonad                                     (xmonadPrompt)
 -- Misc commands
 --
 
-dmenu = "dmenu_run -i -fn '" ++ myFont ++
-    "' -nb '#222' -nf '#ccc' -sb '#555' -sf '#fff'"
 horario = "feh /home/meqif/FCT/horario.png"
 horario_mod = "feh /home/meqif/FCT/horario_mod.png"
 horario_lena = "feh /home/meqif/.horario_lena.png"
@@ -122,9 +120,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- launch a terminal
     [ ((modMask .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
-    -- launch dmenu
+    -- launch menu
     , ((modMask,               xK_p     ), shellPrompt myPromptConfig)
---    , ((modMask,               xK_p     ), spawn dmenu)
 
     -- launch firefox
     , ((modMask .|. shiftMask, xK_w     ), spawn "firefox")

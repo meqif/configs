@@ -32,12 +32,8 @@ import System.IO (hPutStrLn)
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
-import XMonad.Prompt (XPConfig(..))
+import XMonad.Prompt       (XPPosition(Top), XPConfig(..), defaultXPConfig)
 import XMonad.Prompt.Shell (shellPrompt)
-import XMonad.Prompt                                            (XPPosition(Top), XPConfig(..), defaultXPConfig)
-import XMonad.Prompt.Man                                        (manPrompt)
-import XMonad.Prompt.Window                                     (windowPromptGoto, windowPromptBring)
-import XMonad.Prompt.XMonad                                     (xmonadPrompt)
 
 
 --------------------------------------------------------------------------------

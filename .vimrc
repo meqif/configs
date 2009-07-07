@@ -257,6 +257,7 @@ map <C-Tab> :tabNext<cr>
 """"""""""""""""""""""""""""
 
 syntax on
+set synmaxcol=80
 
 " My stuff "
 

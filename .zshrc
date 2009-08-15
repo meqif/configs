@@ -39,12 +39,3 @@ TMPPREFIX=/tmp
 
 autoload -U zmv
 alias mmv='zmv -W'
-
-if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/vc/1 ]]; then
-    xinit
-    #logout
-fi
-
-#if [[ -n $DISPLAY ]]; then
-#    alias vim="gvim -v"
-#fi
